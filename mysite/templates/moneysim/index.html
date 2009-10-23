@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<style type="text/css">
+<!--
+#apDiv1 {
+	position:absolute;
+	left:584px;
+	top:40px;
+	width:308px;
+	height:21px;
+	z-index:1;
+}
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+}
+-->
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Money Supply Simulation, by Yi Wang</title></head><body>
+<h1>
+  <script type="text/javascript" src="/media/js/dojo/dojo.js"></script></h1>
+<table width="100%" border="0">
+  <tr>
+    <td width="700"><h1>Money Supply Simulation, by <a href="http://www.yi-wang.me" title="Yi Wang's Website" target="_blank">Yi Wang</a></h1></td>
+    <td><h4>Python with Nump, Matplotlib, Django and Dojo, <a href="http://tinyurl.com/yiwang-python" target="_blank">more info</a></h4></td>
+  </tr>
+</table>
+<form>
+  <table width="100%" border="0">
+    <tr bgcolor="#CCCCCC">
+      <td width="178" align="center"><strong>Set Parameter</strong></td>
+      <td width="499" align="center"><strong>
+        Fed Reserve Rate
+        <label> (rr)
+<input name="r2" type="text" id="r2" size="5">
+          r
+          <input name="r" type="text" id="r" size="5">
+        </label>
+      </strong></td>
+      <td width="639" align="left"><strong>
+        <input name="submit" type="submit" id="submit" value="Simulate">
+      </strong></td>
+    </tr>
+  </table>
+</form>
+<table width="100%" border="0">
+  <tr align="center" bgcolor="#CCCCCC">
+    <td width="43%"><strong>Results Plot</strong></td>
+    <td><strong>Output Data</strong></td>
+  </tr>
+  <tr valign="top">
+    <td><div><img src="p3.png" alt="output plot" width="592" height="663" ></div></td>
+    <td><iframe src="p3_table.txt" width="100%" height="663"></iframe></td>
+  </tr>
+</table>
+</body></html>

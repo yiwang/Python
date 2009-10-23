@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<Module>
+  <ModulePrefs title="__UP_title__" directory_title="Flexible Gadget" 
+   description="last.fm player" author="Aslak Grinsted" author_email="rek@phunck.cmo" author_link="http://www.phunck.com" scrolling="false"
+   height="400" 
+   category="funandgames" 
+title_url="__UP_titleurl__"
+/> 
+  <UserPref name="title" display_name="title" datatype="string" required="false" default_value="Phuncks flexible gadget" /> 
+  <UserPref name="titleurl" display_name="title url" datatype="string" required="false" default_value="http://www.glaciology.net" /> 
+  <UserPref name="innerhtml" display_name="innerHTML" datatype="string" required="false" default_value="innerHTML test" /> 
+  <UserPref name="javascript" display_name="javascript" datatype="string" required="false" default_value="container.style.backgroundColor='#FFAAAA';" /> 
+  <UserPref name="iframeurl" display_name="iframe url" datatype="string" required="false" default_value="" /> 
+<Content type="html">
+<![CDATA[ <div id="container" style="">
+Please wait...
+<script type="text/javascript" language="javascript"> 
+    var prefs = new _IG_Prefs(__MODULE_ID__);
+    var container=_gel("container");
+
+		if (prefs.getString("innerhtml")) {
+				container.innerHTML=prefs.getString("innerhtml");
+		}
+
+		if (prefs.getString("iframeurl")) {
+				document.location=prefs.getString("iframeurl");
+		}
+
+		eval(prefs.getString("javascript"));
+
+
+</script></div>
+  ]]> 
+  </Content>
+  </Module>
