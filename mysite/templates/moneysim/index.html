@@ -40,18 +40,7 @@ body,td,th {
 <title>Money Supply Simulation, by Yi Wang</title>
 </head>
 <body>
-<h2>Money Supply Dynamics Simulation as Web Application, by <a
-	href="http://www.yi-wang.me" title="Yi Wang's Website" target="_blank">Yi
-Wang</a></h2>
-<h4>Python with Numpy, matplotlib run on Apache with Django, YUI
-for Ajax.<br>
-<br>
-<a href="http://www.yi-wang.me/web-development/numpy-django/money-game"
-	target="_top">More Info.</a><br>
-<br>
-Input number as parameter in the blanks and click 'Simulate' button.<br>
-The backend server will perform the simulation, and update the result
-plot and output data.</h4>
+
 <form id='ajax_example' methon='post'>
 <table width="100%" border="0">
 	<tr bgcolor="#CCCCCC">
@@ -69,7 +58,7 @@ plot and output data.</h4>
 <div>
 <table width="100%" border="0">
 	<tr align="center" bgcolor="#CCCCCC">
-		<td width="43%"><strong>Results Plot</strong></td>
+		<td width="43%"><strong>Result Plot</strong></td>
 		<td><strong>Output Data</strong></td>
 	</tr>
 	<tr valign="top">
@@ -136,7 +125,11 @@ var ajax_example = {
 
 	failure : function(o) { // In this example, we shouldn't ever go down this
 							// path.
-			alert('An error has occurred');
+			alert('An error has occurred, maybe your input is not NUMBER?');
+			// Re -enable the form.
+			for ( var i = 0; i < ajax_example.form.elements.length; i++) {
+				ajax_example.form.elements[i].disabled = false;
+			}
 		}
 	},
 
@@ -160,5 +153,15 @@ var ajax_example = {
 
 YAHOO.util.Event.addListener(window, 'load', ajax_example.init);
 </script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-11099677-1");
+pageTracker._setDomainName(".yi-wang.me");
+pageTracker._trackPageview();
+} catch(err) {}</script>
 </body>
 </html>
