@@ -1,33 +1,43 @@
  #Create your views here.
+import sys
+from mysite.moneysim import p3
 from django.shortcuts import get_object_or_404, render_to_response
- 
+from django.http import HttpResponse 
+from django.utils import simplejson
+
+rr_srv = 10
+seed_srv = 200
+
+def is_number(s):
+    try:
+        float(s)
+        return True
+    except ValueError:
+        return False
+
 def index(request):
-#    latest_poll_list = Poll.objects.all().order_by('-pub_date')[:5]
-    return render_to_response('moneysim/index.html', {'latest_poll_list': 3})
+    if not request.POST:
+        return render_to_response('moneysim/index.html')
+    
+    
+    rr = request.REQUEST["rr"]
+    seed = request.REQUEST["seed"]
+    
+    if is_number(rr) and is_number(seed):
+        rr_srv, seed_srv = rr,seed = float(rr),float(seed)
+        p3.sim(rr,seed)
+        response_dict = {'ok':1}    
+        #return render_to_response('moneysim/index.html')
+    else:
+        response_dict = {'rr':rr_srv, 'seed':seed_srv}
+    return HttpResponse(simplejson.dumps(response_dict),mimetype='application/javascript')
+        
+    
+    
+    
 
 
-#--------------------------------------------------------- def details(request):
-    #-------------------------------------------------------------- [more stuff]
-    #---------------------------------------------------------- if request.POST:
-                #---------------------------- # Get all the mark for this recipe
-        #------- list_mark = Mark.objects.values('mark').filter(recipe__pk=r.id)
-                #--------------------------------------- # loop to get the total
-        #------------------------------------------------------------- total = 0
-        #--------------------------------------------- for element in list_mark:
-            #------------------------------------------- total+= element['mark']
-                #---------------------------------------------------- # round it
-        # #--------------------- total = round((float(total) /  len(list_mark)),1)
-                #-------------------------------------------- # update the total
-        #--------------------------------------------------- r.total_mark= total
-        #-------------------------------------------------- # save the user mark
-                #------------------------------------------------------ r.save()
-#------------------------------------------------------------------------------ 
-                #------------------------ # Now the intersting part for this tut
-        #---------------------------------------------------- import simple_json
-                #------------ # it was a french string, if we dont't use unicode
-                #---------- # the result at the output of json in Dojo is wrong.
-        #--------------------------------- message = unicode( message, "utf-8" )
-                #------------------------------------------------------------- #
-        #- jsonList = simple_json.dumps((my_mark, total, form_message ,message))
-        #----------------------------------------- return HttpResponse(jsonList)
-          # #[more stuff, if not POST return render_to_response('recettes/details.html' ...]
+def result(request):
+    
+    print sys.path
+    return render_to_response('moneysim/index.html')

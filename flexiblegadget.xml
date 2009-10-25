@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?> 
 <Module>
   <ModulePrefs title="__UP_title__" directory_title="Flexible Gadget" 
-   description="last.fm player" author="Aslak Grinsted" author_email="rek@phunck.cmo" author_link="http://www.phunck.com" scrolling="false"
-   height="400" 
-   category="funandgames" 
+   description="modified from http://www.glaciology.net/" author="Yi Wang" author_email="E@Yi-Wang.Me" author_link="http://www.Yi-Wang.com" scrolling="false"
+   height="2000" 
+   category="technology" 
 title_url="__UP_titleurl__"
 /> 
-  <UserPref name="title" display_name="title" datatype="string" required="false" default_value="Phuncks flexible gadget" /> 
-  <UserPref name="titleurl" display_name="title url" datatype="string" required="false" default_value="http://www.glaciology.net" /> 
-  <UserPref name="innerhtml" display_name="innerHTML" datatype="string" required="false" default_value="innerHTML test" /> 
+  <UserPref name="title" display_name="title" datatype="string" required="false" default_value="Yi Wang" /> 
+  <UserPref name="titleurl" display_name="title url" datatype="string" required="false" default_value="http://www.Yi-Wang.me" /> 
+  <UserPref name="innerhtml" display_name="innerHTML" datatype="string" required="false" default_value="Loading ..." /> 
   <UserPref name="javascript" display_name="javascript" datatype="string" required="false" default_value="container.style.backgroundColor='#FFAAAA';" /> 
   <UserPref name="iframeurl" display_name="iframe url" datatype="string" required="false" default_value="" /> 
 <Content type="html">
