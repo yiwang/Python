@@ -61,6 +61,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'mysite.middleware.firestats.FireStatsIntegrationMiddleware',
 )
 
 ROOT_URLCONF = 'mysite.urls'
@@ -81,3 +82,6 @@ INSTALLED_APPS = (
     'mysite.moneysim',
     'django.contrib.admin'
 )
+
+FIRESTATS_DIRECTORY = '/var/www/firestats'
+FIRESTATS_SITE_ID = 1
